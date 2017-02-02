@@ -39,7 +39,7 @@ syntax anything(name=gitArgs id="git command and arguments")
      */
     capture confirm file "`gitDir'"
     if _rc!=0{
-        mkdir "`gitDir'"
+       cap mkdir "`gitDir'"
     }
     qui cd "`gitDir'"
 
@@ -83,7 +83,7 @@ syntax anything(name=gitArgs id="git command and arguments")
         local repoDir = "`gitDir'`repoName'/"
         capture confirm file "`repoDir'"
         if _rc!=0{
-            mkdir "`repoDir'"
+            cap mkdir "`repoDir'"
         }
         else{
             /* Return to old directory */
